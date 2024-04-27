@@ -33,7 +33,7 @@ mvn spring-boot:run
 ## Test by API
 - order-management
 ```
- http :8088/orders orderId="orderId" restaurantId="restaurantId" status="status" statusType="statusType" class466S="class466s" 
+ http :8088/orders orderId="orderId" restaurantId="restaurantId" status="status" statusType="statusType" 
 ```
 - rider-management
 ```

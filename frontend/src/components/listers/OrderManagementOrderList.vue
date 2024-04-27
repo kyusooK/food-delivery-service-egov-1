@@ -44,7 +44,6 @@
                             
                             
                             
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -52,7 +51,6 @@
                             [ RestaurantId :  {{data.restaurantId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Status :  {{data.status }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ StatusType :  {{data.statusType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Class466S :  {{data.class466S }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -124,7 +122,6 @@
                 'restaurantId': '',
                 'status': '',
                 'statusType': '',
-                'class466S': [],
             }
         },
         methods: {

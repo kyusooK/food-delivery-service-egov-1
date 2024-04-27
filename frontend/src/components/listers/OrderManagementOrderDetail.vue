@@ -15,7 +15,6 @@
                 <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
             </div>
             <StatusType offline label="StatusType" v-model="item.statusType" :editMode="false" :key="false" @change="change" />
-            <OrderDetailsManager offline label="Class466S" v-model="item.class466S" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

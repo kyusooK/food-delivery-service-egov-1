@@ -31,8 +31,11 @@ function EgovNoticeDetail(props) {
     const riderId = location.state.riderId;
     const searchCondition = location.state.searchCondition;
 
-    const [open, setOpen] = useState(false);
+    const [pickUpFoodopen, setPickUpFoodOpen] = useState(false);
+    const [completeDeliveryopen, setCompleteDeliveryOpen] = useState(false);
     const condition = true; 
+
+    const [entity, setEntity] = useState("");
 
     const [masterBoard, setMasterBoard] = useState({});
     const [user, setUser] = useState({});
@@ -40,7 +43,7 @@ function EgovNoticeDetail(props) {
     const [boardAttachFiles, setBoardAttachFiles] = useState();
 
     const retrieveDetail = () => {
-        const retrieveDetailURL = `/riders/riderId`;
+        const retrieveDetailURL = `/riders/${riderId}`;
         const requestOptions = {
             method: "GET",
             headers: {
@@ -63,6 +66,21 @@ function EgovNoticeDetail(props) {
         axios.delete(`/riders/${riderId}`)
         navigate('/riderManagement/riders');
     }
+    function pickUpFood(){
+
+        axios.put(`/orders/${riderId}/acceptorder`, {riderId: entity }) 
+        .then(response => {
+            setAcceptOrderOpen(false);
+        })
+    }
+    function completeDelivery(){
+
+        axios.put(`/orders/${riderId}/acceptorder`, {riderId: entity }) 
+        .then(response => {
+            setAcceptOrderOpen(false);
+        })
+    }
+
     return (
         <div className="container">
             <div className="c_wrap">
@@ -91,10 +109,15 @@ function EgovNoticeDetail(props) {
                         {/* <!-- 게시판 상세보기 --> */}
                         <div className="board_view">
                             <div className="board_view_top">
-                                <div className="tit">[object Object]</div>
+                                <div className="tit">{riderId}</div>
                                 <div className="info">
                                     <dl>
-                                    
+                                        <dt>RiderId</dt>
+                                        <dd>{riderId}</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>OrderId</dt>
+                                        <dd>{boardDetail && boardDetail.orderId }</dd>
                                     </dl>
                                 </div>
                             </div>
@@ -104,7 +127,7 @@ function EgovNoticeDetail(props) {
                                         <button className="btn btn_blue_h46 w_100"
                                          onClick={() => {
                                             if (condition) {  
-                                            setOpen(true);
+                                            setPickUpFoodOpen(true);
                                             }
                                         }}>
                                             PickUpFood
@@ -112,7 +135,7 @@ function EgovNoticeDetail(props) {
                                         <button className="btn btn_blue_h46 w_100"
                                          onClick={() => {
                                             if (condition) {  
-                                            setOpen(true);
+                                            setCompleteDeliveryOpen(true);
                                             }
                                         }}>
                                             CompleteDelivery
@@ -123,7 +146,7 @@ function EgovNoticeDetail(props) {
                                     <Link to="/riderManagement/riders"
                                         className="btn btn_blue_h46 w_100">목록</Link>
                                 </div>
-                                <div className="right_col btn1" style={{marginTop: "5px", marginRight: "11%"}}>
+                                <div className="right_col btn1" style={{marginTop: "5px", marginRight: "9%"}}>
                                     <button
                                         onClick={deleteList}
                                         className="btn btn_blue_h46 w_100">삭제
@@ -133,8 +156,8 @@ function EgovNoticeDetail(props) {
                         </div>
                         {/* <!-- 게시판 상세보기 --> */}
                         <div>
-                            <Dialog open={open} onClose={() => setOpen(false)}>
-                                <DialogTitle>AcceptOrder</DialogTitle>
+                            <Dialog open={pickUpFoodopen} onClose={() => setPickUpFoodOpen(false)}>
+                                <DialogTitle>PickUpFood</DialogTitle>
                                 <DialogContent>
                                     <TextField 
                                         autoFocus
@@ -143,21 +166,23 @@ function EgovNoticeDetail(props) {
                                         label="RiderId"
                                         type="text"
                                         fullWidth
+                                        value={entity}
+                                        onChange={(e) => setEntity(e.target.value)}
                                     />
                                 </DialogContent>
                                 <DialogActions>
-                                    <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
+                                    <button onClick={() => setPickUpFoodOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    {/* <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    <button onClick={pickUpFood} className="btn btn_blue_h46 w_100">
                                     PickUpFood
-                                    </button> */}
+                                    </button>
                                 </DialogActions>
                             </Dialog>
                         </div>
                         <div>
-                            <Dialog open={open} onClose={() => setOpen(false)}>
-                                <DialogTitle>AcceptOrder</DialogTitle>
+                            <Dialog open={completeDeliveryopen} onClose={() => setCompleteDeliveryOpen(false)}>
+                                <DialogTitle>CompleteDelivery</DialogTitle>
                                 <DialogContent>
                                     <TextField 
                                         autoFocus
@@ -166,15 +191,17 @@ function EgovNoticeDetail(props) {
                                         label="RiderId"
                                         type="text"
                                         fullWidth
+                                        value={entity}
+                                        onChange={(e) => setEntity(e.target.value)}
                                     />
                                 </DialogContent>
                                 <DialogActions>
-                                    <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
+                                    <button onClick={() => setCompleteDeliveryOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    {/* <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    <button onClick={completeDelivery} className="btn btn_blue_h46 w_100">
                                     CompleteDelivery
-                                    </button> */}
+                                    </button>
                                 </DialogActions>
                             </Dialog>
                         </div>

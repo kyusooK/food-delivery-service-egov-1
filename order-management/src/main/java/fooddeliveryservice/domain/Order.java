@@ -22,9 +22,6 @@ public class Order {
 
     private StatusType statusType;
 
-    @PostPersist
-    public void onPostPersist() {}
-
     @PrePersist
     public void onPrePersist() {}
 

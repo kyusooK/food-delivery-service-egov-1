@@ -56,8 +56,7 @@ function EgovNoticeEdit(props) {
             orderId: boardDetail.orderId,
             restaurantId: boardDetail.restaurantId,
             status: boardDetail.status,
-            statusType: boardDetail.statusType,
-            class466S: boardDetail.class466S
+            statusType: boardDetail.statusType
         };
 
         axios.post('/orders', entity)
@@ -153,16 +152,6 @@ function EgovNoticeEdit(props) {
                                 <dd>
                                     <input className="f_input2 w_full" id="statusType" name="statusType" type="text"
                                         onChange={e => setBoardDetail({ ...boardDetail, statusType: e.target.value })}
-                                        maxLength="60" />
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>
-                                    <label htmlFor="nttSj">Class466S</label>
-                                </dt>
-                                <dd>
-                                    <input className="f_input2 w_full" id="class466S" name="class466S" type="text"
-                                        onChange={e => setBoardDetail({ ...boardDetail, class466S: e.target.value })}
                                         maxLength="60" />
                                 </dd>
                             </dl>

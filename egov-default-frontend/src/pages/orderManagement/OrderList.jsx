@@ -65,7 +65,6 @@ function EgovNoticeList(props) {
                             <div>{item.restaurantId}</div>    
                             <div>{item.status}</div>    
                             <div>{item.statusType}</div>    
-                            <div>{item.class466S}</div>    
                         </Link>
                     );
                 });
@@ -156,7 +155,6 @@ function EgovNoticeList(props) {
                                 <span>Restaurant ID</span>
                                 <span>Order Status</span>
                                 <span>Order Status 유형</span>
-                                <span>Class466S</span>
                             
                             </div>
                             <div className="result">
