@@ -31,7 +31,8 @@ function EgovNoticeDetail(props) {
     const orderId = location.state.orderId;
     const searchCondition = location.state.searchCondition;
 
-    const [open, setOpen] = useState(false);
+    const [acceptOrderOpen, setAcceptOrderOpen] = useState(false);
+    const [rejectOrderOpen, setRejectOrderOpen] = useState(false);
     const condition = true; 
 
     const [masterBoard, setMasterBoard] = useState({});
@@ -104,23 +105,23 @@ function EgovNoticeDetail(props) {
                             <div className="board_btn_area">
                                 <div style={{ display: "flex", flexDirection: "row"}}>
                                     <div style={{marginTop: "5px"}}>
-                                        <button className="btn btn_blue_h46 w_100"
+                                        <button className="btn btn_blue_h46"
                                          onClick={() => {
                                             if (condition) {  
-                                            setOpen(true);
+                                                setAcceptOrderOpen(true);
                                             }
                                         }}>
                                             AcceptOrder
                                         </button>
-                                        <button className="btn btn_blue_h46 w_100"
+                                        <button className="btn btn_blue_h46"
                                          onClick={() => {
                                             if (condition) {  
-                                            setOpen(true);
+                                            setRejectOrderOpen(true);
                                             }
                                         }}>
                                             RejectOrder
                                         </button>
-                                        <button className="btn btn_blue_h46 w_100"
+                                        {/* <button className="btn btn_blue_h46"
                                          onClick={() => {
                                             if (condition) {  
                                             setOpen(true);
@@ -128,14 +129,14 @@ function EgovNoticeDetail(props) {
                                         }}>
                                             PrepareFood
                                         </button>
-                                        <button className="btn btn_blue_h46 w_100"
+                                        <button className="btn btn_blue_h46"
                                          onClick={() => {
                                             if (condition) {  
                                             setOpen(true);
                                             }
                                         }}>
                                             NotifyRider
-                                        </button>
+                                        </button> */}
                                     </div>
                                 </div>
                                 <div className="right_col btn1" style={{marginTop: "5px"}}>
@@ -151,6 +152,52 @@ function EgovNoticeDetail(props) {
                             </div>
                         </div>
                         {/* <!-- 게시판 상세보기 --> */}
+                        <div>
+                            <Dialog open={acceptOrderOpen} onClose={() => setAcceptOrderOpen(false)}>
+                                <DialogTitle>AcceptOrder</DialogTitle>
+                                <DialogContent>
+                                    <TextField 
+                                        autoFocus
+                                        margin="dense"
+                                        id="orderId"
+                                        label="OrderId"
+                                        type="text"
+                                        fullWidth
+                                    />
+                                </DialogContent>
+                                <DialogActions>
+                                    <button onClick={() => setAcceptOrderOpen(false)} className="btn btn_blue_h46 w_100">
+                                        Cancel
+                                    </button>
+                                    <button className="btn btn_blue_h46 w_100">
+                                    AcceptOrder
+                                    </button>
+                                </DialogActions>
+                            </Dialog>
+                        </div>
+                        <div>
+                            <Dialog open={rejectOrderOpen} onClose={() => setRejectOrderOpen(false)}>
+                                <DialogTitle>RejectOrder</DialogTitle>
+                                <DialogContent>
+                                    <TextField 
+                                        autoFocus
+                                        margin="dense"
+                                        id="orderId"
+                                        label="OrderId"
+                                        type="text"
+                                        fullWidth
+                                    />
+                                </DialogContent>
+                                <DialogActions>
+                                    <button onClick={() => setRejectOrderOpen(false)} className="btn btn_blue_h46 w_100">
+                                        Cancel
+                                    </button>
+                                    <button className="btn btn_blue_h46 w_100">
+                                    RejectOrder
+                                    </button>
+                                </DialogActions>
+                            </Dialog>
+                        </div>
                         {/* <div>
                             <Dialog open={open} onClose={() => setOpen(false)}>
                                 <DialogTitle>AcceptOrder</DialogTitle>
@@ -168,53 +215,7 @@ function EgovNoticeDetail(props) {
                                     <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
-                                    AcceptOrder
-                                    </button>
-                                </DialogActions>
-                            </Dialog>
-                        </div>
-                        <div>
-                            <Dialog open={open} onClose={() => setOpen(false)}>
-                                <DialogTitle>AcceptOrder</DialogTitle>
-                                <DialogContent>
-                                    <TextField 
-                                        autoFocus
-                                        margin="dense"
-                                        id="orderId"
-                                        label="OrderId"
-                                        type="text"
-                                        fullWidth
-                                    />
-                                </DialogContent>
-                                <DialogActions>
-                                    <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
-                                        Cancel
-                                    </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
-                                    RejectOrder
-                                    </button>
-                                </DialogActions>
-                            </Dialog>
-                        </div>
-                        <div>
-                            <Dialog open={open} onClose={() => setOpen(false)}>
-                                <DialogTitle>AcceptOrder</DialogTitle>
-                                <DialogContent>
-                                    <TextField 
-                                        autoFocus
-                                        margin="dense"
-                                        id="orderId"
-                                        label="OrderId"
-                                        type="text"
-                                        fullWidth
-                                    />
-                                </DialogContent>
-                                <DialogActions>
-                                    <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
-                                        Cancel
-                                    </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    <button className="btn btn_blue_h46 w_100">
                                     PrepareFood
                                     </button>
                                 </DialogActions>
@@ -237,7 +238,7 @@ function EgovNoticeDetail(props) {
                                     <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    <button className="btn btn_blue_h46 w_100">
                                     NotifyRider
                                     </button>
                                 </DialogActions>
