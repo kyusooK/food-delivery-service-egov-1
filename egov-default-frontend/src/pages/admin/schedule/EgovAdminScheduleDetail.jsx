@@ -170,10 +170,8 @@ function EgovAdminScheduleDetail(props) {
                             <div className="board_btn_area">
                                 {user.id &&
                                     <div className="left_col btn1">
-                                        <Link to={{pathname: URL.ADMIN_SCHEDULE_MODIFY}}
-                                            state={{
-                                                schdulId: location.state?.schdulId
-}}                                            className="btn btn_skyblue_h46 w_100">수정</Link>
+                                        <Link to=
+                                            state=                                            className="btn btn_skyblue_h46 w_100">수정</Link>
                                         <button className="btn btn_skyblue_h46 w_100"
                                             onClick={(e) => {
                                                 onClickDeleteSchedule(location.state?.schdulId);
