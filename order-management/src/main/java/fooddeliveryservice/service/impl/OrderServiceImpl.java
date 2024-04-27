@@ -90,6 +90,7 @@ public class OrderServiceImpl
         /** Choice 2:  call the domain method of the Order.   
         return Order.acceptOrder(acceptOrderCommand);
            */
+        return null;
     }
 
     @Override
@@ -115,6 +116,7 @@ public class OrderServiceImpl
         /** Choice 2:  call the domain method of the Order.   
         return Order.rejectOrder(rejectOrderCommand);
            */
+        return null;
     }
 
     @Override
@@ -140,6 +142,7 @@ public class OrderServiceImpl
         /** Choice 2:  call the domain method of the Order.   
         return Order.prepareFood(prepareFoodCommand);
            */
+        return null;
     }
 
     @Override
@@ -165,5 +168,6 @@ public class OrderServiceImpl
         /** Choice 2:  call the domain method of the Order.   
         return Order.notifyRider(notifyRiderCommand);
            */
+        return null;
     }
 }
