@@ -142,31 +142,21 @@ function EgovAdminGalleryDetail(props) {
                             <div className="board_btn_area">
 							{masterBoard.bbsUseFlag === 'Y' &&
                                 <div className="left_col btn3">
-                                    <Link to={{pathname: URL.ADMIN_GALLERY_MODIFY}} 
-                                        state={{
-                                            nttId: nttId, 
-                                            bbsId: bbsId
-}}                                        className="btn btn_skyblue_h46 w_100">수정</Link>
+                                    <Link to= 
+                                        state=                                        className="btn btn_skyblue_h46 w_100">수정</Link>
                                     <a href="#!" className="btn btn_skyblue_h46 w_100" onClick={(e) => {
                                         e.preventDefault();
                                         onClickDeleteBoardArticle(boardDetail.bbsId, boardDetail.nttId);
                                     }}>삭제</a>
 									{masterBoard.replyPosblAt === 'Y' &&
-                                    <Link to={{pathname: URL.ADMIN_GALLERY_REPLY}} 
-                                        state={{
-                                            nttId: nttId, 
-                                            bbsId: bbsId
-}}                                        className="btn btn_skyblue_h46 w_100">답글작성</Link>
+                                    <Link to= 
+                                        state=                                        className="btn btn_skyblue_h46 w_100">답글작성</Link>
 									}
                                 </div>
 							}
                                 <div className="right_col btn1">
-                                    <Link to={{pathname: URL.ADMIN_GALLERY}} 
-                                        state={{
-                                            nttId: nttId,
-                                            bbsId: bbsId,
-                                            searchCondition: searchCondition
-}}                                        className="btn btn_blue_h46 w_100">목록</Link>
+                                    <Link to= 
+                                        state=                                        className="btn btn_blue_h46 w_100">목록</Link>
                                 </div>
                             </div>
                         </div>
