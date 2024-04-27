@@ -13,10 +13,14 @@ public class RiderHateoasProcessor
     @Override
     public EntityModel<Rider> process(EntityModel<Rider> model) {
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/pickupfood")
+                .withRel("pickupfood")
         );
         model.add(
-            Link.of(model.getRequiredLink("self").getHref() + "/").withRel("")
+            Link
+                .of(model.getRequiredLink("self").getHref() + "/completedelivery")
+                .withRel("completedelivery")
         );
 
         return model;

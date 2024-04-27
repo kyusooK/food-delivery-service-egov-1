@@ -61,7 +61,7 @@ function EgovNoticeDetail(props) {
 
     function deleteList(){
         axios.delete(`/riders/${riderId}`)
-        navigate('/rider-management/riders');
+        navigate('/riderManagement/riders');
     }
     return (
         <div className="container">
@@ -70,7 +70,7 @@ function EgovNoticeDetail(props) {
                 <div className="location">
                     <ul>
                         <li><Link to={URL.MAIN} className="home">Home</Link></li>
-                        <li><Link to="/rider-management/riders">Rider</Link></li>
+                        <li><Link to="/riderManagement/riders">Rider</Link></li>
                         <li>{masterBoard && masterBoard.bbsNm}</li>
                     </ul>
                 </div>
@@ -120,7 +120,7 @@ function EgovNoticeDetail(props) {
                                     </div>
                                 </div>
                                 <div className="right_col btn1" style={{marginTop: "5px"}}>
-                                    <Link to="/rider-management/riders"
+                                    <Link to="/riderManagement/riders"
                                         className="btn btn_blue_h46 w_100">목록</Link>
                                 </div>
                                 <div className="right_col btn1" style={{marginTop: "5px", marginRight: "11%"}}>
@@ -149,9 +149,9 @@ function EgovNoticeDetail(props) {
                                     <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    {/* <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
                                     PickUpFood
-                                    </button>
+                                    </button> */}
                                 </DialogActions>
                             </Dialog>
                         </div>
@@ -172,9 +172,9 @@ function EgovNoticeDetail(props) {
                                     <button onClick={() => setOpen(false)} className="btn btn_blue_h46 w_100">
                                         Cancel
                                     </button>
-                                    <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
+                                    {/* <button onClick={acceptOrder} className="btn btn_blue_h46 w_100">
                                     CompleteDelivery
-                                    </button>
+                                    </button> */}
                                 </DialogActions>
                             </Dialog>
                         </div>

@@ -70,6 +70,7 @@ public class OrderServiceImpl
     @Override
     public Order acceptOrder(AcceptOrderCommand acceptOrderCommand)
         throws Exception {
+            return null;
         // You can implement logic here, or call the domain method of the Order.
 
         /** Choice 1:  implement logic here        
@@ -95,6 +96,8 @@ public class OrderServiceImpl
     @Override
     public Order rejectOrder(RejectOrderCommand rejectOrderCommand)
         throws Exception {
+            return null;
+
         // You can implement logic here, or call the domain method of the Order.
 
         /** Choice 1:  implement logic here        
@@ -120,6 +123,8 @@ public class OrderServiceImpl
     @Override
     public Order prepareFood(PrepareFoodCommand prepareFoodCommand)
         throws Exception {
+            return null;
+
         // You can implement logic here, or call the domain method of the Order.
 
         /** Choice 1:  implement logic here        
@@ -145,6 +150,8 @@ public class OrderServiceImpl
     @Override
     public Order notifyRider(NotifyRiderCommand notifyRiderCommand)
         throws Exception {
+            return null;
+
         // You can implement logic here, or call the domain method of the Order.
 
         /** Choice 1:  implement logic here        

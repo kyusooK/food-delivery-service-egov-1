@@ -60,7 +60,7 @@ function EgovNoticeDetail(props) {
 
     function deleteList(){
         axios.delete(`/orders/${orderId}`)
-        navigate('/order-management/orders');
+        navigate('/orderManagement/orders');
     }
     return (
         <div className="container">
@@ -69,7 +69,7 @@ function EgovNoticeDetail(props) {
                 <div className="location">
                     <ul>
                         <li><Link to={URL.MAIN} className="home">Home</Link></li>
-                        <li><Link to="/order-management/orders">Order</Link></li>
+                        <li><Link to="/orderManagement/orders">Order</Link></li>
                         <li>{masterBoard && masterBoard.bbsNm}</li>
                     </ul>
                 </div>
@@ -138,7 +138,7 @@ function EgovNoticeDetail(props) {
                                     </div>
                                 </div>
                                 <div className="right_col btn1" style={{marginTop: "5px"}}>
-                                    <Link to="/order-management/orders"
+                                    <Link to="/orderManagement/orders"
                                         className="btn btn_blue_h46 w_100">목록</Link>
                                 </div>
                                 <div className="right_col btn1" style={{marginTop: "5px", marginRight: "11%"}}>
@@ -150,7 +150,7 @@ function EgovNoticeDetail(props) {
                             </div>
                         </div>
                         {/* <!-- 게시판 상세보기 --> */}
-                        <div>
+                        {/* <div>
                             <Dialog open={open} onClose={() => setOpen(false)}>
                                 <DialogTitle>AcceptOrder</DialogTitle>
                                 <DialogContent>
@@ -241,7 +241,7 @@ function EgovNoticeDetail(props) {
                                     </button>
                                 </DialogActions>
                             </Dialog>
-                        </div>
+                        </div> */}
                         
                         {/* <!--// 본문 --> */}
                     </div>

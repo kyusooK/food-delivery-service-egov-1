@@ -68,6 +68,8 @@ public class RiderServiceImpl
     @Override
     public Rider pickUpFood(PickUpFoodCommand pickUpFoodCommand)
         throws Exception {
+            return null;
+
         // You can implement logic here, or call the domain method of the Rider.
 
         /** Choice 1:  implement logic here        
@@ -94,6 +96,8 @@ public class RiderServiceImpl
     public Rider completeDelivery(
         CompleteDeliveryCommand completeDeliveryCommand
     ) throws Exception {
+        return null;
+
         // You can implement logic here, or call the domain method of the Rider.
 
         /** Choice 1:  implement logic here        
