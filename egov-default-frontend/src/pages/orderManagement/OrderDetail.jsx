@@ -72,7 +72,6 @@ function EgovNoticeDetail(props) {
 
         axios.put(`/orders/${orderId}/acceptorder`, {orderId: entity }) 
         .then(response => {
-            setAcceptOrderOpen(false);
         })
     }
     function rejectOrder(){

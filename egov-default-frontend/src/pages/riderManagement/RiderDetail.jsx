@@ -70,14 +70,12 @@ function EgovNoticeDetail(props) {
 
         axios.put(`/orders/${riderId}/acceptorder`, {riderId: entity }) 
         .then(response => {
-            setAcceptOrderOpen(false);
         })
     }
     function completeDelivery(){
 
         axios.put(`/orders/${riderId}/acceptorder`, {riderId: entity }) 
         .then(response => {
-            setAcceptOrderOpen(false);
         })
     }
 

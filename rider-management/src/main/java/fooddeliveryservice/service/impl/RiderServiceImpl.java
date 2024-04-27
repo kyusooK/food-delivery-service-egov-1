@@ -90,7 +90,6 @@ public class RiderServiceImpl
         /** Choice 2:  call the domain method of the Rider.   
         return Rider.pickUpFood(pickUpFoodCommand);
            */
-        return null;
     }
 
     @Override
@@ -119,6 +118,5 @@ public class RiderServiceImpl
         /** Choice 2:  call the domain method of the Rider.   
         return Rider.completeDelivery(completeDeliveryCommand);
            */
-        return null;
     }
 }
