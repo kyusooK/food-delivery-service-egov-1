@@ -26,9 +26,6 @@
                             <v-list-item-subtitle>
                                 StatusType :  {{item.statusType }}
                             </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                Class466S :  {{item.class466S }}
-                            </v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action>
@@ -80,8 +77,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['orderId'] = arr[4]; 
-                    
-                    
                     
                     
                     

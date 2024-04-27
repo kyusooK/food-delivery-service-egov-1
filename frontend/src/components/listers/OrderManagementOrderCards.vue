@@ -113,7 +113,6 @@
                 'restaurantId': '',
                 'status': '',
                 'statusType': '',
-                'class466S': [],
             }
         },
         methods:{

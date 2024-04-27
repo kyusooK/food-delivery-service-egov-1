@@ -22,12 +22,6 @@ public class Order {
 
     private StatusType statusType;
 
-    @ElementCollection
-    private List<OrderDetails> class466S;
-
-    @PostPersist
-    public void onPostPersist() {}
-
     @PrePersist
     public void onPrePersist() {}
 

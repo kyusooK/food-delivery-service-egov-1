@@ -70,7 +70,6 @@
                     { text: "restaurantId", value: "restaurantId" },
                     { text: "status", value: "status" },
                     { text: "statusType", value: "statusType" },
-                    { text: "class466S", value: "class466S" },
                 ],
             order : [],
             newValue: {},
@@ -92,7 +91,6 @@
                 'restaurantId': '',
                 'status': '',
                 'statusType': '',
-                'class466S': [],
             }
         },
         methods: {
