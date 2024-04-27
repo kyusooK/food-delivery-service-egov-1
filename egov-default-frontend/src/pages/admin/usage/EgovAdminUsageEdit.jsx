@@ -279,14 +279,18 @@ function EgovAdminUsageEdit(props) {
                                             boardDetail.bbsId === 'BBSMSTR_BBBBBBBBBBBB'                                             
                                             ? 
                                             <Link
-                                                to=
-                                                state=                                            >
+                                                to={{pathname: URL.INFORM_GALLERY }}
+                                                state={{
+                                                    bbsId: boardDetail.bbsId
+}}                                            >
                                                 {`${boardDetail.bbsId}`}
                                             </Link>
                                             : 
                                             <Link
-                                                to=
-                                                state=                                            >
+                                                to={{pathname: URL.INFORM_NOTICE }}
+                                                state={{
+                                                    bbsId: boardDetail.bbsId
+}}                                            >
                                                 {`${boardDetail.bbsId}`}
                                             </Link>
                                         }

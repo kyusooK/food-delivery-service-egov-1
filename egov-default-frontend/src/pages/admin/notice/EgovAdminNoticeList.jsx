@@ -58,8 +58,12 @@ function EgovAdminNoticeList(props) {
                     const listIdx = itemIdxByPage(resultCnt , currentPageNo, pageSize, index);
 
                     mutListTag.push(
-                        <Link to=
-                            state=                            key={listIdx} className="list_item" >
+                        <Link to={{pathname: URL.ADMIN_NOTICE_DETAIL}}
+                            state={{
+                                nttId: item.nttId,
+                                bbsId: item.bbsId,
+                                searchCondition: searchCondition
+}}                            key={listIdx} className="list_item" >
                             <div>{listIdx}</div>
                             {(item.replyLc * 1 ? true : false) &&
                                 <><div className="al reply">
@@ -149,7 +153,7 @@ function EgovAdminNoticeList(props) {
                                 </li>
                                 {masterBoard.bbsUseFlag === 'Y' &&
                                     <li>
-                                        <Link to={URL.ADMIN_NOTICE_CREATE} state= className="btn btn_blue_h46 pd35">등록</Link>
+                                        <Link to={URL.ADMIN_NOTICE_CREATE} state={{bbsId: bbsId}} className="btn btn_blue_h46 pd35">등록</Link>
                                     </li>
                                 }
                             </ul>
