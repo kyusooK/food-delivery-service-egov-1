@@ -92,7 +92,7 @@ function EgovNoticeList(props) {
                 <div className="location">
                     <ul>
                         <li><Link to={URL.MAIN} className="home">Home</Link></li>
-                        <li><Link to={URL.INFORM}>Order Management</Link></li>
+                        <li>Order Management</li>
                         <li>Order</li>
                     </ul>
                 </div>
