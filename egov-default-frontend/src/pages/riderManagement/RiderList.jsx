@@ -61,7 +61,7 @@ function EgovNoticeList(props) {
                                 searchCondition: searchCondition
 }}                            key={listIdx}
                             className="list_item">
-                            <div>{item._links.self.href.split('/').pop()}</div>  
+                            <div>{item._links.self.href.split('/').pop()}</div>
                             <div>{item.orderId}</div>    
                         </Link>
                     );
