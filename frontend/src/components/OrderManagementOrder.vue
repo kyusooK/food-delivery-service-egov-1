@@ -20,7 +20,6 @@
             <String label="Restaurant ID" v-model="value.restaurantId" :editMode="editMode" :inputUI="''"/>
             <String label="Order Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
             <StatusType offline label="Order Status 유형" v-model="value.statusType" :editMode="editMode" @change="change"/>
-            <List&lt;OrderDetails&gt; offline label="Class466S" v-model="value.class466S" :editMode="editMode" @change="change"/>
             <OrderDetailsManager offline label="Class466S" v-model="value.class466S" :editMode="editMode" @change="change"/>
         </v-card-text>
 
